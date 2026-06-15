@@ -1,0 +1,60 @@
+name: Bug report
+description: Report a reproducible problem in Jupyter Notebook Assistant
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include credentials, private source code, notebook data, access tokens, or confidential paths.
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: "0.1.27"
+    validations:
+      required: true
+  - type: input
+    id: jupyterlab
+    attributes:
+      label: JupyterLab version
+    validations:
+      required: true
+  - type: input
+    id: codex
+    attributes:
+      label: Codex CLI version
+      description: Enter "not applicable" for manual ChatGPT-only problems.
+    validations:
+      required: true
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: Workflow
+      options:
+        - Local Codex workflow
+        - Agent mode
+        - Manual ChatGPT workflow
+        - Installation or activation
+        - Session history or undo
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem description
+      description: Explain what happened and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Sanitized diagnostics
+      description: Remove credentials, private code, hostnames, and sensitive paths.

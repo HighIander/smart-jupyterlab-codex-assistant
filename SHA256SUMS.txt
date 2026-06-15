@@ -1,0 +1,1 @@
+8e3bd6300eb682ae85942ae5e3b38458c3f83411dbdb55691bfc4eae1a3d79b6  jupyter_notebook_assistant-0.1.27-py3-none-any.whl

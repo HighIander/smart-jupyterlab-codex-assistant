@@ -1,0 +1,5 @@
+{
+  "packageManager": "python",
+  "packageName": "jupyter-notebook-assistant",
+  "uninstallInstructions": "Use `python -m pip uninstall jupyter-notebook-assistant`."
+}

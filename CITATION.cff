@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the software release from GitHub."
+title: "Jupyter Notebook Assistant"
+type: software
+authors:
+  - family-names: "Kluge"
+    given-names: "Thomas"
+repository-code: "https://github.com/HighIander/jupyter-notebook-assistant"
+url: "https://github.com/HighIander/jupyter-notebook-assistant"
+license: "AGPL-3.0-only"
+version: "0.1.27"
+date-released: "2026-06-15"
+keywords:
+  - JupyterLab
+  - Jupyter Notebook
+  - Codex
+  - ChatGPT
+  - artificial intelligence
+  - coding assistant

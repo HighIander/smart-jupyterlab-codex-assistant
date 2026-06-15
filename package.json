@@ -1,0 +1,91 @@
+{
+  "name": "jupyter-notebook-assistant",
+  "version": "0.1.27",
+  "description": "Notebook-aware Codex and manual ChatGPT assistant for JupyterLab 4",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension",
+    "codex",
+    "chatgpt"
+  ],
+  "homepage": "https://github.com/HighIander/jupyter-notebook-assistant#readme",
+  "bugs": {
+    "url": "https://github.com/HighIander/jupyter-notebook-assistant/issues"
+  },
+  "license": "AGPL-3.0-only",
+  "author": {
+    "name": "Thomas Kluge",
+    "url": "https://github.com/HighIander"
+  },
+  "files": [
+    "lib/**/*.{js,js.map,d.ts}",
+    "style/**/*.{css,js}",
+    "schema/*.json"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "style": "style/index.css",
+  "scripts": {
+    "build": "npm run build:lib && npm run build:labextension",
+    "build:lib": "tsc",
+    "build:labextension": "jupyter labextension build .",
+    "build:prod": "npm run clean && npm run build:lib && jupyter labextension build .",
+    "clean": "rimraf lib tsconfig.tsbuildinfo jupyter_notebook_assistant/labextension",
+    "watch": "tsc -w --preserveWatchOutput"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^4.0.0",
+    "@jupyterlab/apputils": "^4.0.0",
+    "@jupyterlab/cells": "^4.0.0",
+    "@jupyterlab/coreutils": "^6.0.0",
+    "@jupyterlab/notebook": "^4.0.0",
+    "@jupyterlab/services": "^7.0.0",
+    "@jupyterlab/ui-components": "^4.0.0",
+    "@lumino/disposable": "^2.0.0",
+    "@lumino/widgets": "^2.0.0",
+    "@lumino/messaging": "^2.0.0"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "4.5.3",
+    "license-webpack-plugin": "2.3.14",
+    "rimraf": "^6.0.1",
+    "typescript": "~5.8.3",
+    "webpack": "5.94.0"
+  },
+  "jupyterlab": {
+    "extension": true,
+    "outputDir": "jupyter_notebook_assistant/labextension",
+    "sharedPackages": {
+      "@jupyterlab/apputils": {
+        "requiredVersion": "^4.0.0",
+        "singleton": true,
+        "bundled": false
+      },
+      "@jupyterlab/notebook": {
+        "requiredVersion": "^4.0.0",
+        "singleton": true,
+        "bundled": false
+      },
+      "@jupyterlab/ui-components": {
+        "requiredVersion": "^4.0.0",
+        "singleton": true,
+        "bundled": false
+      },
+      "@lumino/messaging": {
+        "requiredVersion": "^2.0.0",
+        "singleton": true,
+        "bundled": false
+      },
+      "@lumino/widgets": {
+        "requiredVersion": "^2.0.0",
+        "singleton": true,
+        "bundled": false
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HighIander/jupyter-notebook-assistant.git"
+  }
+}

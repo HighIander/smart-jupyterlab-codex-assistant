@@ -1,0 +1,12 @@
+Jupyter Notebook Assistant
+Copyright (C) 2026 Thomas Kluge
+
+This project is licensed under the GNU Affero General Public License version 3 only.
+See LICENSE for the complete license text.
+
+This project is independent and is not affiliated with, endorsed by, or an official
+product of OpenAI, ChatGPT, Codex, Project Jupyter, or JupyterLab.
+
+Third-party JavaScript license information for the prebuilt JupyterLab bundle is
+included in jupyter_notebook_assistant/labextension/static/third-party-licenses.json
+when the extension is built.

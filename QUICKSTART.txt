@@ -1,0 +1,143 @@
+JUPYTER NOTEBOOK ASSISTANT 0.1.27
+
+INSTALL
+  unzip jupyter-notebook-assistant-0.1.27.zip
+  cd jupyter-notebook-assistant-0.1.27
+  bash install.sh
+
+Then stop and restart the complete JupyterHub single-user server.
+
+OPEN
+  Open a notebook and click the robot toolbar icon.
+
+CODEX
+  export PATH="$HOME/.local/bin:$PATH"
+  hash -r
+  mkdir -p "$HOME/.codex"
+  touch "$HOME/.codex/config.toml"
+  emacs "$HOME/.codex/config.toml"
+
+  Add and save:
+      cli_auth_credentials_store = "file"
+
+  Then run:
+      codex login --device-auth
+      codex login status
+
+@ASSISTANT SHORTCUT
+  Configure it under Notebook permissions -> @assistant shortcut.
+  Default: Ctrl+Q
+
+  Example in the active code cell:
+      # @assistant fix the error in this cell
+
+  Press Ctrl+Q. In Codex mode a patch is generated. In manual mode the
+  generated prompt is copied to the clipboard.
+
+SELECT CURRENT CELL AND ABOVE
+  Configure under Notebook permissions -> Keyboard shortcuts.
+  Default: Ctrl+Alt+A
+
+MANUAL COPY SHORTCUT
+  In manual mode, press Ctrl+C in the task field with no selected text.
+
+
+CODEX LOGIN
+-----------
+Click Log in in the Assistant header. The dialog is also shown once when the
+Assistant is opened for the first time. It contains:
+
+  export PATH="$HOME/.local/bin:$PATH"
+  hash -r
+  mkdir -p "$HOME/.codex"
+  touch "$HOME/.codex/config.toml"
+  emacs "$HOME/.codex/config.toml"
+
+  Add this line, save the file, and exit Emacs:
+      cli_auth_credentials_store = "file"
+
+  Then run:
+      codex login --device-auth
+      codex login status
+
+Run these commands in a JupyterLab terminal. The task field remains empty for
+your actual task.
+
+
+Keyboard shortcut note: Ctrl+Shift+A is reserved by Firefox and Chromium-based browsers, so the default shortcut for selecting the active cell and all cells above is Ctrl+Alt+A.
+
+AGENT MODE
+  The permissions row is split into Notebook permissions and Agent mode.
+  Click Agent mode to configure the project root and permissions. Click the
+  gray/blue switch to activate or deactivate it. Agent mode runs Codex through
+  JupyterLab's TerminalManager and can directly modify project files.
+
+  The Agent mode dialog places Project root immediately below Working mode.
+
+  Enable agent policy boundaries controls whether whitelist/blacklist patterns
+  are applied. Overlapping path categories use the most permissive matching
+  grant, so Notebook directory = Read is sufficient for a local imported file
+  in that directory.
+
+  Activating Agent mode shows a destructive-operation warning and keeps a red
+  Agent mode active banner visible. Review all permissions and resulting file
+  changes carefully.
+
+SESSION AI HISTORY
+  Click Session AI history in the patch action area to open a second
+  JupyterLab tab. Use the arrows or slider to browse patches from this
+  JupyterLab session. Applied patches provide Undo and Reapply.
+
+
+USER INSTRUCTION
+  Open the gear menu -> User instructions.
+  Edit the text and enable or disable:
+      Include this instruction in every generated prompt
+
+  The instruction is stored in the browser and is added to both Codex and
+  manually copied ChatGPT prompts while enabled.
+
+INPUT BEHAVIOR
+  Click the gear icon in the Assistant header.
+  Default: Enter submits; Shift+Enter starts a new line.
+  The alternate setting reverses these keys.
+
+PATCH ACTIONS
+  After patch generation, Generate patch stays disabled until the task text
+  changes. Reject is directly left of Apply and becomes red when Apply is blue.
+
+DOCUMENTATION AND LICENSE
+  Open the Assistant settings menu (gear icon) and choose:
+    README / documentation
+    License (AGPL-3.0)
+
+  Project repository:
+    https://github.com/HighIander/jupyter-notebook-assistant
+
+AUTHENTICATION RECOVERY
+  If Codex reports that access was revoked or a token/session was invalidated,
+  run the following in a JupyterLab terminal:
+
+    export PATH="$HOME/.local/bin:$PATH"
+    hash -r
+
+    codex logout
+    rm -f "${CODEX_HOME:-$HOME/.codex}/auth.json"
+
+    codex login --device-auth
+    codex login status
+
+    codex exec \
+        --ephemeral \
+        --skip-git-repo-check \
+        "Reply with exactly: authentication works"
+
+SECURITY
+  Agent mode can read, alter, create, delete, or execute data with the rights
+  of your Jupyter account. Read README.md before enabling it. Use version
+  control and backups. Cluster compatibility mode disables the Codex OS
+  sandbox and should only be used in an externally isolated environment.
+
+LICENSE AND AUTHOR
+  Copyright (C) 2026 Thomas Kluge
+  GNU Affero General Public License v3.0 only. See LICENSE.

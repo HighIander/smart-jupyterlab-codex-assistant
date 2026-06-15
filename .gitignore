@@ -1,0 +1,39 @@
+# JavaScript dependencies and build caches
+node_modules/
+*.tsbuildinfo
+
+# Python build products
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter and editor state
+.ipynb_checkpoints/
+.jupyter_cache/
+.vscode/
+.idea/
+
+# Test and coverage output
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local release staging
+jupyter-notebook-assistant-*/
+jupyter-notebook-assistant-*.zip
+jupyter_notebook_assistant-*.whl
+
+# Credentials and environment files
+.env
+.env.*
+auth.json
+.codex/

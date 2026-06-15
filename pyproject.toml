@@ -1,0 +1,93 @@
+[build-system]
+requires = [
+    "hatchling>=1.25",
+    "hatch-jupyter-builder>=0.9.1",
+    "jupyterlab>=4.0,<5"
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter-notebook-assistant"
+version = "0.1.27"
+description = "Notebook-aware Codex and manual ChatGPT assistant for JupyterLab 4"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "AGPL-3.0-only" }
+authors = [
+    { name = "Thomas Kluge" }
+]
+keywords = [
+    "JupyterLab",
+    "Jupyter Notebook",
+    "Codex",
+    "ChatGPT",
+    "coding assistant"
+]
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab :: 4",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3"
+]
+dependencies = [
+    "jupyterlab>=4.0,<5"
+]
+
+[project.urls]
+Homepage = "https://github.com/HighIander/jupyter-notebook-assistant"
+Documentation = "https://github.com/HighIander/jupyter-notebook-assistant#readme"
+Repository = "https://github.com/HighIander/jupyter-notebook-assistant"
+Issues = "https://github.com/HighIander/jupyter-notebook-assistant/issues"
+Changelog = "https://github.com/HighIander/jupyter-notebook-assistant/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/jupyter_notebook_assistant",
+    "/src",
+    "/style",
+    "/schema",
+    "/vendor",
+    "/.github",
+    "/package.json",
+    "/package-lock.json",
+    "/pyproject.toml",
+    "/tsconfig.json",
+    "/install.json",
+    "/install.sh",
+    "/uninstall.sh",
+    "/diagnostics.sh",
+    "/README.md",
+    "/QUICKSTART.txt",
+    "/CHANGELOG.md",
+    "/CONTRIBUTING.md",
+    "/SECURITY.md",
+    "/RELEASE.md",
+    "/CITATION.cff",
+    "/NOTICE",
+    "/LICENSE",
+    "/.gitignore"
+]
+
+[tool.hatch.build.targets.wheel]
+artifacts = [
+    "jupyter_notebook_assistant/labextension"
+]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"jupyter_notebook_assistant/labextension" = "share/jupyter/labextensions/jupyter-notebook-assistant"
+"install.json" = "share/jupyter/labextensions/jupyter-notebook-assistant/install.json"
+
+[tool.hatch.build.hooks.jupyter-builder]
+dependencies = ["hatch-jupyter-builder>=0.9.1"]
+build-function = "hatch_jupyter_builder.npm_builder"
+ensured-targets = [
+    "jupyter_notebook_assistant/labextension/package.json",
+    "jupyter_notebook_assistant/labextension/static/style.js"
+]
+skip-if-exists = [
+    "jupyter_notebook_assistant/labextension/package.json"
+]
+
+[tool.hatch.build.hooks.jupyter-builder.build-kwargs]
+build_cmd = "build:prod"
+npm = ["npm"]

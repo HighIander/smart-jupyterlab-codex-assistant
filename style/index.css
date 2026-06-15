@@ -1,0 +1,1290 @@
+:root {
+  --jna-gap: 8px;
+}
+
+.jna-AssistantRoot [hidden] {
+  display: none !important;
+}
+
+.jna-AssistantRoot {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 180px;
+  overflow: hidden;
+  background: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-ui-font-family);
+}
+
+.jna-Header {
+  position: relative;
+  z-index: 5;
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid var(--jp-border-color2);
+}
+
+.jna-HeaderTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.jna-HeaderText {
+  min-width: 0;
+}
+
+.jna-HeaderActions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 5px;
+}
+
+.jna-HeaderLoginButton {
+  box-sizing: border-box;
+  min-height: 24px;
+  padding: 2px 7px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jna-HeaderLoginButton:hover {
+  border-color: var(--jp-brand-color1);
+  background: var(--jp-layout-color3);
+}
+
+.jna-SettingsDetails {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.jna-SettingsButton {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  font-size: 15px;
+  list-style: none;
+  user-select: none;
+}
+
+.jna-SettingsButton::-webkit-details-marker {
+  display: none;
+}
+
+.jna-SettingsDetails[open] > .jna-SettingsButton {
+  border-color: var(--jp-brand-color1);
+}
+
+.jna-SettingsMenu {
+  position: absolute;
+  top: 29px;
+  right: 0;
+  box-sizing: border-box;
+  width: min(330px, calc(100vw - 28px));
+  padding: 10px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 4px;
+  background: var(--jp-layout-color1);
+  box-shadow: var(--jp-elevation-z4);
+}
+
+.jna-SettingsMenuTitle {
+  margin-bottom: 7px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.jna-SettingsOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 5px 3px;
+  cursor: pointer;
+  line-height: 1.35;
+}
+
+.jna-SettingsOption input {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.jna-HeaderTitle {
+  font-size: var(--jp-ui-font-size2);
+  font-weight: 600;
+}
+
+.jna-HeaderSubline {
+  margin-top: 3px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jna-Content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 10px 12px 14px;
+}
+
+.jna-SuccessBanner {
+  margin-bottom: 10px;
+  padding: 9px 11px;
+  border: 1px solid var(--jp-success-color1);
+  border-left-width: 4px;
+  border-radius: 3px;
+  background: var(--jp-success-color3);
+  color: var(--jp-ui-font-color1);
+  font-weight: 600;
+}
+
+.jna-WorkingLabel {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--jp-warn-color1);
+  border-left-width: 4px;
+  border-radius: 3px;
+  background: var(--jp-warn-color3);
+  color: var(--jp-ui-font-color1);
+  font-weight: 600;
+}
+
+.jna-Section {
+  margin-bottom: 12px;
+}
+
+.jna-SectionTitle {
+  margin-bottom: 5px;
+  color: var(--jp-ui-font-color2);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.jna-ModeBar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.jna-ModeButton,
+.jna-Button,
+.jna-SmallButton {
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.jna-ModeButton {
+  min-height: 30px;
+  padding: 5px 8px;
+}
+
+.jna-ModeButton[data-active="true"] {
+  border-color: var(--jp-brand-color1);
+  background: var(--jp-brand-color1);
+  color: white;
+}
+
+.jna-Button {
+  min-height: 30px;
+  padding: 5px 10px;
+}
+
+.jna-Button.jp-mod-accept {
+  border-color: var(--jp-brand-color1);
+  background: var(--jp-brand-color1);
+  color: white;
+}
+
+.jna-Button.jp-mod-warn {
+  border-color: var(--jp-warn-color1);
+  color: var(--jp-warn-color1);
+}
+
+.jna-Button:disabled,
+.jna-ModeButton:disabled,
+.jna-SmallButton:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.jna-SmallButton {
+  padding: 2px 6px;
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jna-TaskInput,
+.jna-ResponseInput {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-input-background);
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: 1.4;
+  padding: 8px;
+}
+
+.jna-TaskInput {
+  min-height: 96px;
+}
+
+.jna-ResponseInput {
+  min-height: 130px;
+}
+
+.jna-ButtonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.jna-ButtonRow.jna-Right {
+  justify-content: flex-end;
+}
+
+
+.jna-CodexActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.jna-CodexAutoApply {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.jna-ContextButton {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 7px 9px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+}
+
+.jna-Result {
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color0);
+  min-height: 80px;
+  padding: 8px;
+}
+
+.jna-ResultEmpty {
+  color: var(--jp-ui-font-color2);
+  font-style: italic;
+}
+
+.jna-StatusMessage {
+  margin-top: 7px;
+  min-height: 18px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jna-StatusMessage[data-level="error"] {
+  color: var(--jp-error-color1);
+}
+
+.jna-StatusMessage[data-level="success"] {
+  color: var(--jp-success-color1);
+}
+
+.jna-BottomStatus {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 9px;
+  border-top: 1px solid var(--jp-border-color2);
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  white-space: nowrap;
+}
+
+.jna-ContextDialog {
+  min-width: min(580px, 85vw);
+  max-width: 760px;
+}
+
+.jna-ContextGroup {
+  margin-bottom: 14px;
+}
+
+.jna-OptionLine {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 6px 0;
+}
+
+.jna-OptionLine input {
+  margin-top: 2px;
+}
+
+
+.jna-PermissionOption {
+  cursor: pointer;
+  user-select: none;
+}
+
+.jna-PermissionOption input {
+  cursor: pointer;
+}
+
+.jna-PermissionSummary {
+  margin: 8px 0 10px;
+  padding: 7px 9px;
+  border-left: 3px solid var(--jp-brand-color1);
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  line-height: 1.35;
+}
+
+.jna-ContextSummary {
+  margin: 9px 0;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background: var(--jp-layout-color2);
+  font-family: var(--jp-code-font-family);
+}
+
+.jna-Preview {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 55vh;
+  overflow: auto;
+  white-space: pre-wrap;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color0);
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  padding: 8px;
+}
+
+.jna-Operation {
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+}
+
+.jna-OperationHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.jna-OperationReason {
+  margin: 5px 0;
+  color: var(--jp-ui-font-color2);
+}
+
+.jna-CellReference {
+  margin: 6px 0;
+  padding: 6px 8px;
+  border-left: 3px solid var(--jp-border-color2);
+  background: var(--jp-layout-color2);
+}
+
+.jna-CellReferenceHeading {
+  line-height: 1.35;
+}
+
+.jna-CellReferenceMetadata {
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jna-CellReferencePreview {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jna-Diff {
+  max-height: 300px;
+  overflow: auto;
+  white-space: pre-wrap;
+  background: var(--jp-layout-color2);
+  padding: 7px;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+}
+
+.jna-Diff > span {
+  display: block;
+  min-height: 1.25em;
+  margin: 0 -4px;
+  padding: 0 4px;
+}
+
+.jna-DiffContext {
+  color: var(--jp-ui-font-color1);
+}
+
+.jna-DiffAdd {
+  color: var(--jp-success-color1);
+  background: color-mix(in srgb, var(--jp-success-color1) 14%, transparent);
+}
+
+.jna-DiffRemove {
+  color: var(--jp-error-color1);
+  background: color-mix(in srgb, var(--jp-error-color1) 14%, transparent);
+}
+
+
+.jna-TaskHeader,
+.jna-ResultHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.jna-TaskHeader .jna-SectionTitle,
+.jna-ResultHeader .jna-SectionTitle {
+  margin-bottom: 0;
+}
+
+.jna-TaskHeader {
+  margin-bottom: 5px;
+}
+
+.jna-ResultHeader {
+  margin-bottom: 5px;
+}
+
+.jna-IconButton {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.jna-Button[data-state="neutral"] {
+  border-color: var(--jp-border-color2);
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+}
+
+.jna-Button[data-state="ready"] {
+  border-color: var(--jp-brand-color1);
+  background: var(--jp-brand-color1);
+  color: white;
+}
+
+.jna-Button[data-state="danger"] {
+  border-color: var(--jp-error-color1);
+  background: var(--jp-error-color1);
+  color: white;
+}
+
+.jna-Button[data-state="success"] {
+  border-color: var(--jp-success-color1);
+  background: var(--jp-success-color1);
+  color: white;
+}
+
+.jna-Button[data-state="success"]:disabled {
+  opacity: 1;
+}
+
+.jna-TaskInput[data-state="active"],
+.jna-ResponseInput[data-state="paste-ready"],
+.jna-ResponseInput[data-state="active"] {
+  border-color: var(--jp-brand-color1);
+  background: color-mix(in srgb, var(--jp-brand-color3) 45%, var(--jp-input-background));
+}
+
+.jna-TaskInput[data-state="locked"] {
+  border-color: var(--jp-border-color2);
+  background: var(--jp-layout-color2);
+}
+
+.jna-ResponseInput[data-state="neutral"] {
+  border-color: var(--jp-border-color2);
+  background: var(--jp-layout-color2);
+}
+
+.jna-WorkflowOption {
+  margin-top: 7px;
+  margin-bottom: 4px;
+}
+
+.jna-PatchSummary {
+  scroll-margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+
+.jna-ShortcutLabel {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jna-ShortcutInput {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 30px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-input-background);
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-code-font-family);
+  padding: 5px 7px;
+}
+
+.jna-ShortcutHelp {
+  margin-top: 5px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  line-height: 1.35;
+}
+
+
+.jna-ManualAutomationOptions {
+  margin-top: -4px;
+  padding-top: 2px;
+  border-top: 1px solid var(--jp-border-color3);
+}
+
+.jna-CodexOptions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 6px;
+  margin: 7px 0;
+}
+
+.jna-SelectLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jna-Select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 30px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-input-background);
+  color: var(--jp-ui-font-color1);
+  font-family: inherit;
+  padding: 4px 6px;
+}
+
+.jna-PatchActionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px solid var(--jp-border-color3);
+}
+
+.jna-AutoRunOption {
+  flex: 1 1 180px;
+  margin: 0;
+}
+
+.jna-ShortcutLabelSpaced {
+  margin-top: 12px;
+}
+
+.jna-PatchDetailsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px 0 4px;
+  padding-top: 7px;
+  border-top: 1px solid var(--jp-border-color3);
+}
+
+.jna-PatchDetails[hidden] {
+  display: none;
+}
+
+.jna-PatchActionRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+  align-items: center;
+}
+
+.jna-HistoryAction {
+  justify-self: end;
+}
+
+.jna-ApplyColumn {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  min-width: 0;
+}
+
+.jna-ApplyColumn .jna-AutoRunOption {
+  flex: none;
+  justify-content: flex-end;
+  max-width: 100%;
+  margin: 0;
+  text-align: right;
+}
+
+.jna-HistoryRoot {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 420px;
+  overflow: hidden;
+  background: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-ui-font-family);
+}
+
+.jna-HistoryHeader {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--jp-border-color2);
+}
+
+.jna-HistoryTitle {
+  font-size: var(--jp-ui-font-size3);
+  font-weight: 600;
+}
+
+.jna-HistoryMetadata {
+  color: var(--jp-ui-font-color2);
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-ui-font-size1);
+  text-align: right;
+}
+
+.jna-HistoryNavigation {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--jp-border-color3);
+  background: var(--jp-layout-color2);
+}
+
+.jna-HistoryArrow {
+  min-width: 38px;
+  padding-inline: 10px;
+  font-size: 18px;
+}
+
+.jna-HistorySlider {
+  width: 100%;
+}
+
+.jna-HistoryPosition {
+  min-width: 56px;
+  color: var(--jp-ui-font-color2);
+  font-family: var(--jp-code-font-family);
+  text-align: right;
+}
+
+.jna-HistoryContent {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 14px 16px 18px;
+}
+
+.jna-HistorySection {
+  margin-top: 16px;
+}
+
+.jna-HistoryInput {
+  box-sizing: border-box;
+  max-height: 220px;
+  overflow: auto;
+  white-space: pre-wrap;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color0);
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: 1.45;
+  padding: 10px;
+}
+
+.jna-HistoryEntryState {
+  display: inline-block;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 999px;
+  background: var(--jp-layout-color2);
+  padding: 3px 9px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  font-weight: 600;
+}
+
+.jna-HistoryEntryState[data-state="applied"] {
+  border-color: var(--jp-success-color1);
+  color: var(--jp-success-color1);
+}
+
+.jna-HistoryEntryState[data-state="undone"] {
+  border-color: var(--jp-warn-color1);
+  color: var(--jp-warn-color1);
+}
+
+.jna-HistoryActions,
+.jna-HistoryFooter {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--jp-border-color2);
+}
+
+.jna-HistoryActions {
+  justify-content: flex-end;
+}
+
+.jna-HistoryFooter {
+  justify-content: flex-end;
+  background: var(--jp-layout-color2);
+}
+
+.jna-HistoryStatus {
+  flex: 0 0 auto;
+  min-height: 18px;
+  padding: 0 16px 8px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jna-HistoryStatus[data-level="success"] {
+  color: var(--jp-success-color1);
+}
+
+.jna-HistoryStatus[data-level="error"] {
+  color: var(--jp-error-color1);
+}
+
+.jna-HistoryEmpty {
+  color: var(--jp-ui-font-color2);
+  font-style: italic;
+}
+
+@media (max-width: 620px) {
+  .jna-HistoryRoot {
+    min-width: 280px;
+  }
+
+  .jna-HistoryHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .jna-HistoryMetadata {
+    text-align: left;
+  }
+
+  .jna-HistoryNavigation {
+    grid-template-columns: auto minmax(80px, 1fr) auto;
+  }
+
+  .jna-HistoryPosition {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
+
+.jna-InstructionInput {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 96px;
+  margin-top: 6px;
+  padding: 8px;
+  resize: vertical;
+  color: var(--jp-ui-font-color1);
+  background: var(--jp-layout-color1);
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: 1.35;
+}
+
+.jna-InstructionInput:disabled {
+  opacity: 0.55;
+}
+
+.jna-SettingsMenuTitleSpaced {
+  margin-top: 10px;
+}
+
+.jna-SettingsMenuAction {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.jna-SettingsMenuAction:hover {
+  border-color: var(--jp-brand-color1);
+  background: var(--jp-layout-color3);
+}
+
+.jna-SettingsMenuActionSpaced {
+  margin-top: 5px;
+}
+
+.jna-SettingsNumberOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 3px;
+}
+
+.jna-SettingsNumberOption input {
+  box-sizing: border-box;
+  width: 72px;
+  padding: 3px 5px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-input-background);
+  color: var(--jp-ui-font-color1);
+}
+
+.jna-SettingsHelp {
+  margin-top: 3px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  line-height: 1.35;
+}
+
+.jna-HistoryPreviewDialog {
+  box-sizing: border-box;
+  width: min(900px, 82vw);
+  min-width: min(620px, 82vw);
+}
+
+.jna-HistoryPreviewDescription {
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.jna-HistoryPreviewWarning {
+  margin-bottom: 12px;
+  border-left: 4px solid var(--jp-warn-color1);
+  background: var(--jp-layout-color2);
+  padding: 8px 10px;
+  line-height: 1.4;
+}
+
+.jna-HistoryPreviewWarningDestructive {
+  border-left-color: var(--jp-error-color1);
+}
+
+.jna-HistoryPreviewChanges {
+  max-height: 55vh;
+  overflow: auto;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color0);
+  padding: 8px;
+}
+
+.jna-HistoryPreviewChange + .jna-HistoryPreviewChange {
+  margin-top: 10px;
+  border-top: 1px solid var(--jp-border-color2);
+  padding-top: 10px;
+}
+
+.jna-HistoryPreviewChangeTitle {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.jna-HistoryPreviewChangeNote,
+.jna-HistoryPreviewEmpty {
+  color: var(--jp-ui-font-color2);
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .jna-HistoryPreviewDialog {
+    width: 84vw;
+    min-width: 0;
+  }
+}
+
+.jna-AgentBanner {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 20;
+  padding: 7px 10px;
+  border-bottom: 1px solid #7f0000;
+  background: #b00020;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.jna-PermissionButtonRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.jna-PermissionButtonRow .jna-ContextButton {
+  width: 100%;
+  min-width: 0;
+}
+
+.jna-AgentControl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-width: 0;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--jp-layout-color2);
+}
+
+.jna-AgentModeLabel {
+  min-width: 0;
+  padding: 7px 7px;
+  border: 0;
+  background: transparent;
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.jna-AgentModeLabel[data-active="true"] {
+  font-weight: 700;
+}
+
+.jna-ToggleButton {
+  position: relative;
+  box-sizing: border-box;
+  width: 38px;
+  min-width: 38px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 11px;
+  background: var(--jp-border-color2);
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.jna-AgentControl > .jna-ToggleButton {
+  align-self: center;
+  margin-right: 7px;
+}
+
+.jna-ToggleButton::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 35%);
+  transition: left 120ms ease;
+}
+
+.jna-ToggleButton[data-active="true"] {
+  background: var(--jp-brand-color1);
+}
+
+.jna-ToggleButton[data-active="true"]::after {
+  left: 19px;
+}
+
+.jna-AgentDialog {
+  min-width: min(700px, 88vw);
+  max-width: 900px;
+}
+
+.jna-AgentWarning {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--jp-error-color1);
+  border-left-width: 5px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--jp-error-color1) 14%, var(--jp-layout-color1));
+  color: var(--jp-ui-font-color1);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.jna-AgentGroup {
+  margin-bottom: 16px;
+}
+
+.jna-AgentPathInput,
+.jna-AgentPatternInput,
+.jna-AgentLevelInput,
+.jna-AgentAccessSelect {
+  box-sizing: border-box;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-input-background);
+  color: var(--jp-ui-font-color1);
+  font-family: var(--jp-code-font-family);
+}
+
+.jna-AgentPathInput {
+  width: 100%;
+  padding: 7px 8px;
+}
+
+.jna-AgentPatternInput {
+  width: 100%;
+  min-height: 112px;
+  margin-top: 8px;
+  padding: 8px;
+  resize: vertical;
+}
+
+.jna-AgentHelp {
+  margin-top: 5px;
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  line-height: 1.35;
+}
+
+.jna-AgentWorkingMode {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 28px;
+}
+
+.jna-AgentWorkingMode > span {
+  cursor: pointer;
+  user-select: none;
+}
+
+.jna-AgentWorkingMode[data-disabled="true"] {
+  opacity: 0.55;
+}
+
+.jna-AgentWorkingMode[data-disabled="true"] > span {
+  cursor: default;
+}
+
+.jna-AgentPermissionRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--jp-border-color3);
+}
+
+.jna-AgentPermissionControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jna-AgentAccessSelect {
+  min-width: 102px;
+  padding: 4px 6px;
+}
+
+.jna-AgentLevelInput {
+  width: 54px;
+  padding: 4px 5px;
+}
+
+.jna-AgentCheckboxGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px 10px;
+  margin-top: 9px;
+}
+
+.jna-AgentBoundaryToggle {
+  margin-bottom: 9px;
+  font-weight: 600;
+}
+
+.jna-AgentPatternInput:disabled,
+.jna-ToggleButton:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.jna-AgentEnforcementNote {
+  padding: 8px 10px;
+  border-left: 3px solid var(--jp-warn-color1);
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color2);
+  font-size: var(--jp-ui-font-size0);
+  line-height: 1.4;
+}
+
+.jna-AgentResultTitle {
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+
+.jna-AgentResult,
+.jna-AgentDiagnostics pre {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: 1.4;
+}
+
+.jna-LoginDialog {
+  box-sizing: border-box;
+  width: min(720px, 82vw);
+  min-width: min(520px, 82vw);
+}
+
+.jna-LoginCommands {
+  box-sizing: border-box;
+  max-height: 52vh;
+  overflow: auto;
+  padding: 10px;
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 3px;
+  background: var(--jp-layout-color0);
+  color: var(--jp-ui-font-color1);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: 1.4;
+}
+
+.jna-AgentDiagnostics {
+  margin-top: 10px;
+  color: var(--jp-ui-font-color2);
+}
+
+.jna-AgentDiagnostics pre {
+  margin-top: 6px;
+  max-height: 240px;
+  overflow: auto;
+}
+
+@media (max-width: 420px) {
+  .jna-PermissionButtonRow {
+    grid-template-columns: 1fr;
+  }
+
+  .jna-AgentCheckboxGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.jna-StatusMessage {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.jna-AgentCompatibilityToggle {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.jna-AgentCompatibilityWarning {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--jp-error-color1);
+  border-left-width: 4px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--jp-error-color1) 10%, var(--jp-layout-color1));
+  color: var(--jp-ui-font-color1);
+  font-size: var(--jp-ui-font-size0);
+  line-height: 1.4;
+}
