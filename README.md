@@ -207,7 +207,8 @@ The extension sends notebook context to Codex through a hidden helper kernel, bu
 - **Generate patch:** requests a new notebook patch.
 - **Cancel:** interrupts an active Codex request.
 - **Automatically apply after patch generation:** applies a valid patch immediately. Use only when the notebook permission scope is narrow and the task is low risk.
-- **Automatically run selected cell(s) on apply:** executes selected notebook cells after patch application. This can run arbitrary code already present or generated in those cells.
+- **Automatically run selected cell(s) on apply:** executes selected notebook cells after patch application. This can run arbitrary code already present or generated in those cells. If the patch is expected to modify multiple cells, you could for example select the current cell and all cells above to automatically apply and run the full patch. Use together with shortcut Ctrl-Alt-A to automatically select the current cell and those above.
+- **Careful** automatic patch application and automatic run on patch apply together fully automate the AI response and can generate unwanted behaviour since AI results may be wrong or dangerous. Do only use for non-sensitive tasks in specially secured environments.
 - **Reject:** discards the currently displayed patch without modifying the notebook.
 - **Apply:** applies checked operations after validation.
 
@@ -737,7 +738,7 @@ Press the shortcut. The directive is removed from the cell and moved to the task
 
 Default: `Ctrl+Alt+A`
 
-`Ctrl+Shift+A` is commonly reserved by Firefox and Chromium-based browsers and may not reach JupyterLab.
+If mouse focus is outside the cell, this shortcut quickly selects the current cell and above, which is particularly useful for automatic workflow, because the option "automatically run after apply" would then automatically run all selected cells.
 
 ### Input submission
 
