@@ -205,14 +205,14 @@ export function collectNotebookContext(
 export function editPolicyDescription(options: ContextOptions): string {
   if (options.editScope === 'active') {
     return [
-      'Only the active cell captured with this request may be replaced.',
+      'Only the active cell captured with this request may be edited or replaced.',
       'Do not insert, append, delete, or move cells.'
     ].join(' ');
   }
   if (options.editScope === 'selected') {
     return [
-      'Only cells selected when this request was created may be replaced.',
-      'Do not insert, append, delete, or move cells.'
+      'Only cells selected when this request was created may be edited or replaced.',
+      'Do only insert, append, delete, or move cells above the selected cell.'
     ].join(' ');
   }
   const allowances = [
